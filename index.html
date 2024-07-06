@@ -1,1 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Happy Birthday Jeje</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="BirthdayCard">
+        <div class="CardFront">
+            <h3 class="happy">HAPPY BIRTHDAY</h3>
+            <div class="balloons">
+                <div class="balloon-1"></div>
+                <div class="balloon-2"></div>
+                <div class="balloon-3"></div>
+                <div class="balloon-4"></div>
+            </div>
+        </div>
+        <div class="CardInside">
+            <h3 class="back">HAPPY BIRTHDAY</h3>
+            <p>Dear Friend,</p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis expedita debitis esse quaerat
+                adipisci iste illum placeat incidun reprehenderit laudantium!
+            </p>
+            <p class="name">xxx</p>
+        </div>
+    </div>
+</body>
+
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #8e44ad;
+    }
+
+    .BirthdayCard {
+        position: relative;
+        width: 250px;
+        height: 350px;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transform: perspective(2500px);
+        transition: 1s;
+    }
+
+    .BirthdayCard:hover {
+        transform: perspective(2500px) rotate(5deg);
+        box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+            0 10px 100px rgba(0, 0, 0, 0.5);
+    }
+
+    .BirthdayCard:hover .cardFront {
+        transform: rotateY(-160deg);
+    }
+
+    .BirthdayCard:hover .happy {
+        visibility: hidden;
+    }
+
+    .CardFront {
+        position: relative;
+        background-color: #fff;
+        width: 250px;
+        height: 350px;
+        overflow: hidden;
+        transform-origin: left;
+        box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+            30px 0 50px rgba(0, 0, 0, 0.4);
+        transition: 0.6s;
+    }
+
+    .happy {
+        font-family: Tahoma, sans-serif;
+        text-align: center;
+        margin: 30px;
+        background-image: linear-gradient(120deg, #c756ff 0%, #f96ef4 100%);
+        transition: 0.1s;
+    }
+
+    .balloons {
+        position: absolute;
+    }
+
+    .balloon-1,
+    .balloon-2,
+    .balloon-3,
+    .balloon-4 {
+        position: absolute;
+        width: 85px;
+        height: 95px;
+        border-radius: 50%;
+    }
+
+    .balloon-1 {
+        background-color: #9b59b6;
+        left: -10px;
+        top: 50px;
+    }
+
+    .balloon-2 {
+        background-color: #4159ce;
+        left: 50px;
+        top: 20px;
+    }
+
+    .balloon-3 {
+        background-color: #5112e6;
+        left: 110px;
+        top: 50px;
+    }
+
+    .balloon-4 {
+        background-color: #760a97;
+        left: 170px;
+        top: 50px;
+    }
+
+    .balloon-1::before,
+    .balloon-2::before,
+    .balloon-3::before,
+    .balloon-4::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 155px;
+        background-color: #ffc848;
+        top: 95px;
+        left: 43px;
+    }
+
+    .balloon-1::after,
+    .balloon-2::after,
+    .balloon-3::after,
+    .balloon-4::after {
+        content: "";
+        position: absolute;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        top: 94px;
+        left: 37px;
+    }
+
+    .balloon-1::after {
+        border-bottom: 10px solid #9b59b6;
+    }
+
+    .balloon-2::after {
+        border-bottom: 10px solid #4159ce;
+    }
+
+    .balloon-3::after {
+        border-bottom: 10px solid #5112e6;
+    }
+
+    .balloon-4::after {
+        border-bottom: 10px solid #760a97;
+    }
+
+    .CardInside {
+        position: absolute;
+        background-color: #fff;
+        width: 250px;
+        height: 350px;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+        font-family: "Brush Script MT", cursive;
+        margin: 40px;
+        color: #333;
+    }
+
+    .name {
+        position: absolute;
+        left: 150px;
+        top: 200px;
+        color: #333;
+    }
+
+    .back {
+        font-family: Tahoma, sans-serif;
+        color: #333;
+        text-align: center;
+        margin: 30px;
+        outline-color: #333;
+        outline-style: dotted;
+    }
+</style>
+
+</html>
